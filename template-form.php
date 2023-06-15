@@ -42,18 +42,24 @@ get_header();
                 // Storing the Site Verify Response
                 var recaptchaStatus = response['success'];
 
-                if (typeof MktoForms2 != "undefined") {
-                  MktoForms2.whenReady(function(form) {
-                    // Updating the captcha status on the 'lastRecaptchaResponse' form field.
-                    form.vals({
-                      "lastRecaptchaResponse": recaptchaStatus
+                if(recaptchaStatus == true){
+                  if (typeof MktoForms2 != "undefined") {
+                    MktoForms2.whenReady(function(form) {
+                      // Updating the captcha status on the 'lastRecaptchaResponse' form field.
+                      form.vals({
+                        "lastRecaptchaResponse": recaptchaStatus
+                      });
+
+                      form.submittable(true);
+
                     });
-
-                    form.submittable(false);
-                    //console.log("Submitted values: " + JSON.stringify(vals));
-
-                  });
+                  }
+                }else{
+                  
+                  form.submittable(false);
+                  
                 }
+
               }
 
             });
