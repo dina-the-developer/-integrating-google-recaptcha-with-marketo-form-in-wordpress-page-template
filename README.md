@@ -47,5 +47,3 @@ This project is licensed under the MIT License. Feel free to use, modify, and di
 ## Disclaimer
 Please note that this script is provided as-is without any warranty. Use it at your own risk.
 
-Make sure to update the repository URLs, project description, and other relevant information accordingly.
-
